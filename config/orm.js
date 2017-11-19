@@ -32,7 +32,6 @@ function objToSql(ob) {
   	return arr.toString();
 }
 
-// Object for all our SQL statement functions.
 var orm = {
 	// display all of the burgers
 	all: function(cb) {
@@ -46,7 +45,7 @@ var orm = {
 	},
 	// when you enter a burger, its entered into mySQL
 	create: function(cols, vals, cb) {
-		var queryString = "INSERT INTO burgers" + cols.toString() + " VALUES " + printQuestionMarks(vals.length);
+		var queryString = "INSERT INTO burgers " + cols.toString() + " VALUES " + printQuestionMarks(vals.length);
 
 		console.log(queryString);
 
@@ -67,11 +66,9 @@ var orm = {
   			if (err) {
   				throw err;
   			}
-
   			cb(result);
   		});
   	},
 };
 
-// Export the orm object for the model (cat.js).
 module.exports = orm;

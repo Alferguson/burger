@@ -15,7 +15,7 @@ $(function() {
         })
         .then (
             function() {
-                .log("You made a new burger!");
+                console.log("You made a new burger!");
                 location.reload();
             }
         );
@@ -25,14 +25,19 @@ $(function() {
 
         event.preventDefault();
         var id = $(this).data("id");
+        var justDevoured = $(this).data("devour");
+        var justDevouredState = {
+            devoured: justDevoured
+        };
 
         // Send the DELETE request.
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
+            data: justDevouredState
         })
         .then (
             function() {
-                console.log("Burger has been moved", id);
+                console.log("Burger has been moved ", id);
                 location.reload();
             }
         );

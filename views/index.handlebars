@@ -5,17 +5,17 @@
 <ul>
     {{#each burger}}
         {{#unless devored}}
-            {{> burger/burger-block devored=true}}
+            {{> burger/burger-block devoured=true}}
         {{/unless}}
      {{/each}}
 </ul>
 
-<h2>burger that are devored!</h2>
+<h2>burgers that are devored!</h2>
 
 <ul>
     {{#each burger}}
         {{#if devored}}
-            {{> burger/burger-block devored=false}}
+            {{> burger/burger-block devoured=false}}
         {{/if}}
     {{/each}}
 </ul>

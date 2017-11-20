@@ -1,7 +1,23 @@
+.inNOutRed {
+	color: #C6001D;
+}
+.inNOutYellow {
+	color: black;
+	font-size: 200%;
+	-webkit-text-fill-color: #FFEF00; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #C6001D;
+}
+img {
+	width: 40%;
+}
+.container {
+    position: relative;
+    text-align: center;
+}
 li {
   padding: 5px;
   margin: 5px;
-  background: #faebd7;
 }
 
 .label {

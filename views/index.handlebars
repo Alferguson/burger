@@ -1,27 +1,31 @@
 <h1>Its time for them burgs</h1>
 
-<h2>These are some burgs that have not been eaten yet</h2>
+<h2>These are burgs that have not been eaten yet</h2>
 
-<ul>
-    {{#each burgers}}
-        {{#unless devored}}
-            {{> burgers/burgers-block devoured=true}}
-        {{/unless}}
-     {{/each}}
-</ul>
+<div class="col-sm-6">
+    <ul>
+        {{#each burgers}}
+            {{#unless devoured}}
+                {{> burgers/burgers-block}}
+            {{/unless}}
+         {{/each}}
+    </ul>
+</div>    
 
-<h2>Burgs that have been devored!</h2>
-
-<ul>
-    {{#each burgers}}
-        {{#if devored}}
-            {{> burgers/burgers-block devoured=false}}
-        {{/if}}
-    {{/each}}
-</ul>
+<h2>Burgs that have been devoured!</h2>
+<div class="col-sm-6">
+    <ul>
+        {{#each burgers}}
+            {{#if devoured}}
+                {{> burgers/burgers-block devoured=true}}
+            {{/if}}    
+        {{/each}}
+    </ul>
+</div>
 
 <h2>Add a Burger</h2>
-<form class="create-form">
+
+<form class="create-burger">
     <div class="form-group">
         <label for="burg">Burger Name:</label>
         <input type="text" id="burg" name="name">

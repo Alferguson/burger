@@ -1,14 +1,13 @@
 $(function() {
 
-    $("#createBurger").on("submit", function(event) {
+    $(".createBurger").on("submit", function(event) {
         event.preventDefault();
 
         var newBurger = {
-            burger_name: $("#name").val().trim(),
+            burger_name: $("#burg").val().trim(),
             devoured: true
         };
 
-        // Send the POST request.
         $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
@@ -21,7 +20,7 @@ $(function() {
         );
     });
 
-    $("#devour").on("click", function(event) {
+    $(".if-eaten").on("click", function(event) {
 
         event.preventDefault();
         var id = $(this).data("id");
@@ -30,14 +29,13 @@ $(function() {
             devoured: justDevoured
         };
 
-        // Send the DELETE request.
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: justDevouredState
         })
         .then (
             function() {
-                console.log("Burger has been moved ", id);
+                console.log("Burger has been eaten ", id);
                 location.reload();
             }
         );

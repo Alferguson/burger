@@ -1,11 +1,10 @@
 $(function() {
 
-    $(".create-Burger").on("submit", function(event) {
+    $(".create-burger").on("submit", function(event) {
         event.preventDefault();
 
         var newBurger = {
-            burger_name: $("#burg").val().trim(),
-            devoured: false
+            burger_name: $("#burg").val().trim()
         };
 
         $.ajax("/api/burgers", {

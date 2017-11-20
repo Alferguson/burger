@@ -45,7 +45,7 @@ var orm = {
 	},
 	// when you enter a burger, its entered into mySQL
 	create: function(cols, vals, cb) {
-		var queryString = "INSERT INTO burgers " + cols.toString() + " VALUES " + printQuestionMarks(vals.length);
+		var queryString = "INSERT INTO burgers (" + cols.toString() + ") VALUES (" + printQuestionMarks(vals.length) + ") ";
 
 		console.log(queryString);
 

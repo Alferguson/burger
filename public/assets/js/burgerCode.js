@@ -1,6 +1,7 @@
 $(function() {
-
+    // when create-burger is clicked, run the post function
     $(".create-burger").on("submit", function(event) {
+
         event.preventDefault();
 
         var newBurger = {
@@ -13,15 +14,15 @@ $(function() {
         })
         .then (
             function() {
-                console.log("You made a new burger!");
                 location.reload();
             }
         );
     });
-
+    // if this button is clicked, change state of devoured to true
     $(".if-eaten").on("click", function(event) {
 
         event.preventDefault();
+
         var id = $(this).data("id");
         var justDevoured = true;
         var justDevouredState = {

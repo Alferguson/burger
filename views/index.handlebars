@@ -2,11 +2,9 @@
     <img src="/assets/img/InNOut.png" alt="A picture of In-N-Out">
     <h1>Its time for them burgs</h1>
 </div>
-
 <div class="container-fluid row">
     <div class="col-sm-6">
         <h2 class="inNOutRed">These burgs have not been eaten yet</h2>
-
         <ul class="inNOutYellow">
             {{#each burgers}}
                 {{#unless devoured}}
@@ -18,7 +16,6 @@
 
     <div class="col-sm-6">
         <h2 class="inNOutRed">Burgs that have been devoured!</h2>
-
         <ul class="inNOutYellow">
             {{#each burgers}}
                 {{#if devoured}}

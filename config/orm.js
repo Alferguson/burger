@@ -1,5 +1,6 @@
 var connection = require("../config/connection.js");
 
+// function to print question marks by how many values are put in, not necessary for this as only burger name is being used
 function printQuestionMarks(num) {
 	var arr = [];
 
@@ -9,7 +10,7 @@ function printQuestionMarks(num) {
 
 	return arr.toString();
 }
-
+// converts devoured state to mysql so devoured will be changed
 function objToSql(ob) {
 	var arr = [];
 
